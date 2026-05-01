@@ -12,7 +12,7 @@ class AppConfig:
     use_stream=True,
     model=None,
     provider=DEFAULT_PROVIDER,
-    path="config.json",
+    path="saves/config.json",
   ):
     self.use_stream = use_stream
     self.provider = provider
@@ -58,7 +58,7 @@ class AppConfig:
 
   @classmethod
   def load(cls):
-    path = "config.json"
+    path = "saves/config.json"
 
     if os.path.exists(BOOTSTRAP_FILE):
       with open(BOOTSTRAP_FILE, "r") as f:

@@ -1,0 +1,1 @@
+{"use_stream": true, "model": "gemma4:31b-cloud", "provider": "ollama", "path": "saves/config.json"}
