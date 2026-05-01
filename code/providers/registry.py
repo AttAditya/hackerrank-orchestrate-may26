@@ -1,7 +1,7 @@
 from code.providers.dummy import DummyModelProvider
 from code.providers.ollama import OllamaModelProvider
 
-DEFAULT_PROVIDER = "dummy"
+DEFAULT_PROVIDER = "ollama"
 PROVIDERS = {
   "dummy": DummyModelProvider(),
   "ollama": OllamaModelProvider(),

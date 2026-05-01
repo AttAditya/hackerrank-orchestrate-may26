@@ -33,6 +33,7 @@ def handle(args, config):
     )
 
   config.model = requested_model
+  config.save()
 
   return AnalysisResult(
     kind="command",

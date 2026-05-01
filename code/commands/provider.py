@@ -36,6 +36,8 @@ def handle(args, config):
   if not provider.has_model(config.model):
     config.model = provider.list_models()[0]
 
+  config.save()
+
   return AnalysisResult(
     kind="command",
     command="provider",
