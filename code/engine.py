@@ -1,10 +1,9 @@
-from code.agents import DummyAgent
+from code.agents.registry import get_agent
 from code.analyzer import Analyzer
 from code.config import DEFAULT_CONFIG
 
-def run_engine(io, config=DEFAULT_CONFIG, analyzer=None, agent=None):
+def run_engine(io, config=DEFAULT_CONFIG, analyzer=None):
   analyzer = analyzer or Analyzer()
-  agent = agent or DummyAgent()
 
   while True:
     try:
@@ -16,6 +15,8 @@ def run_engine(io, config=DEFAULT_CONFIG, analyzer=None, agent=None):
     output = result.content
 
     if result.kind == "message":
+      agent = get_agent(config.provider)
+
       if config.use_stream:
         io.stream_output(agent.stream_respond(result.content, config))
         io.write_output()
