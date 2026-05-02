@@ -73,6 +73,7 @@ class AppConfig:
     # Create default and save it immediately to disk in PWD
     config = cls(path=path)
     config.save()
+
     return config
 
 DEFAULT_CONFIG = AppConfig.load()
