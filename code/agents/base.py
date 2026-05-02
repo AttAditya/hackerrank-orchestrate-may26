@@ -1,7 +1,7 @@
 class BaseAgent:
-  def respond(self, message, config):
+  def respond(self, message, config, history=None):
     raise NotImplementedError
 
-  def stream_respond(self, message, config):
-    yield self.respond(message, config)
+  def stream_respond(self, message, config, history=None):
+    yield self.respond(message, config, history)
 
