@@ -62,11 +62,7 @@ def run_engine(io, config=DEFAULT_CONFIG, analyzer=None):
           history.append({"role": "user", "content": f"Tool Result: {tool_result}"})
           current_input = "Based on the tool result, please continue your response."
         else:
-          if config.use_stream:
-             io.stream_output([response, "\n"])
-             io.write_output()
-          else:
-             io.write_output(response)
+          io.write_output(response)
           
           # NEW: If the IO object supports saving results (like CsvIO), 
           # call it here after the final response is delivered.
