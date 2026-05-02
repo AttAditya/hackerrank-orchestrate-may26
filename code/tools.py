@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-CRAWLED_DIR = Path("saves/crawled")
+CRAWLED_DIR = Path("data")
 
 def list_domains():
     """Lists all domains that have been crawled."""

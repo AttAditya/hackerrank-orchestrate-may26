@@ -67,6 +67,12 @@ def run_engine(io, config=DEFAULT_CONFIG, analyzer=None):
              io.write_output()
           else:
              io.write_output(response)
+          
+          # NEW: If the IO object supports saving results (like CsvIO), 
+          # call it here after the final response is delivered.
+          if hasattr(io, "save_current_result"):
+            io.save_current_result()
+            
           break
     elif config.use_stream:
       io.stream_output([output, "\n"])
